@@ -6,7 +6,7 @@ import abi from './utils/WavePortal.json';
 export default function App() {
 
   const [currentAccount, setCurrentAccount] = useState("");
-  const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+  const contractAddress = "0xeB143aa19669e885f7EB3813c38FEd07f1Cc934D";
 
   const contractABI = abi.abi;
 
@@ -59,7 +59,6 @@ export default function App() {
       if(ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
-
         const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
         let count = await wavePortalContract.getTotalWaves();
